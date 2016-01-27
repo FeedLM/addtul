@@ -623,6 +623,11 @@ public class EspecificacionesAnimal extends javax.swing.JDialog {//JDialog { //
         tf_consumo.setBackground(new java.awt.Color(255, 255, 204));
         tf_consumo.setText("0.0");
         tf_consumo.setFont(new java.awt.Font("Trebuchet", 0, 48)); // NOI18N
+        tf_consumo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tf_consumoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -948,6 +953,10 @@ public class EspecificacionesAnimal extends javax.swing.JDialog {//JDialog { //
         JDc_FechaCompra.setDate(recepcion.fecha_compra);
         ((JLabel) loteSelector1.getRenderer()).setHorizontalAlignment(SwingConstants.CENTER);
     }//GEN-LAST:event_loteSelector1ActionPerformed
+
+    private void tf_consumoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_consumoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tf_consumoActionPerformed
 
     private boolean validacionCodigo;
 
@@ -1431,7 +1440,8 @@ public class EspecificacionesAnimal extends javax.swing.JDialog {//JDialog { //
             }
         } else {
 
-            if (dialogoConfirmacionSiNo(this, "¿El animal no existe desea ingresarlo al sistema?", gs_mensaje, 1) == 0) {
+            if (dialogoConfirmacionSiNo(this,"Este IDE no existe. \n"
+                    + "¿Desea ingresarlo al sistema como nuevo animal o emparejar con un animal sin IDE?", gs_mensaje, 1) == 0) {
 
                 nuevo = true;
                 btn_agregar.setEnabled(true);
