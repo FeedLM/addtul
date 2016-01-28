@@ -379,10 +379,8 @@ public class Compras extends javax.swing.JDialog {
             manejadorBD.parametrosSP.agregarParametro(dec.format(t_medicina.getValueAt(i, 5)), "varImporte", "DOUBLE", "IN");
 
             if (manejadorBD.ejecutarSP("{ call agregarDetalleCompra(?,?,?,?,?,?,?) }") == 0) {
-
                 System.out.println("Agregado correctamente");
             } else {
-
                 JOptionPane.showMessageDialog(this, "Error en el ingreso de producto", gs_mensaje, JOptionPane.ERROR_MESSAGE);
                 manejadorBD.consulta("DELETE FROM compras "
                         + "WHERE factura = '" + compra.factura + "'"
